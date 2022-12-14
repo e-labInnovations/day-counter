@@ -1,25 +1,25 @@
 {
-    "name": "Day Counter",
-    "version": "1.0.0",
-    "description": "Count number of days from referance date.",
-    "permissions": ["storage"],
-    "manifest_version": 3,
-    "options_page": "options.html",
-       "background": {
-          "service_worker": "background.js"
-       },
-       "content_scripts": [ {
-          "js": [ "script.js" ],
-          "matches": [ "http://*/*", "https://*/*" ]
-       } ],
-       "action": {
-         "default_title": "Day Counter",
-         "default_popup": "popup.html",
-         "default_icon": {
-            "128": "icon.png",
-            "16": "icon.png",
-            "48": "icon.png"
-         }
-       }
-    }
+   "name": "Day Counter",
+   "version": "1.0.0",
+   "description": "Count number of days from referance date.",
+   "permissions": ["storage"],
+   "manifest_version": 3,
+   "options_page": "options.html",
+   "background": {
+      "service_worker": "background.js"
+   },
+   "content_scripts": [ {
+      "js": [ "script.js" ],
+      "matches": [ "http://*/*", "https://*/*" ]
+   } ],
+   "action": {
+      "default_title": "Day Counter",
+      "default_popup": "popup.html",
+      "default_icon": {
+         "128": "icon.png",
+         "16": "icon.png",
+         "48": "icon.png"
+      }
+   }
+}
     

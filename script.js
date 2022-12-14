@@ -13,16 +13,16 @@
         if (!result['text-color']) {
             chrome.storage.sync.set({'text-color' : '#ffffff'});
         }
-        chrome.runtime.sendMessage({event: "refresh"});
+        chrome.runtime.sendMessage({event: "refresh"})
     });
 
 
+    // console.log("HHHH");
 
     //wait for receiving event from script.js
     chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
         // Refresh
         if (msg.event == "refresh") {
-            console.log("Refresh");
             chrome.storage.sync.get(['text-color', 'start-date'], result => {
                 var startDate = result['start-date'];
                 if (!startDate) {
@@ -87,7 +87,3 @@ const updateIcon = (topline, tSize, bottomline, bSize, textColor) => {
     var iconPath = clone.toDataURL();
     chrome.runtime.sendMessage({event: "setIcon", iconPath:iconPath });
 }
-
-var diffDays = 12
-var daySize = (Math.abs(diffDays) < 10) ? 14 : (Math.abs(diffDays) < 100) ? 12 : (Math.abs(diffDays) < 1000) ? 10 : (Math.abs(diffDays) < 10000) ? 8 : 7;
-// updateIcon(diffDays, daySize, "days", 8, '#ff0000');
