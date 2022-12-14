@@ -2,7 +2,7 @@
    "name": "Day Counter",
    "version": "1.0.0",
    "description": "Count number of days from referance date.",
-   "permissions": ["storage"],
+   "permissions": ["storage", "tabs"],
    "manifest_version": 3,
    "options_page": "options.html",
    "background": {
