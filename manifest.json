@@ -5,21 +5,21 @@
     "permissions": ["storage"],
     "manifest_version": 3,
     "options_page": "options.html",
-    
        "background": {
-          "page": "background.html"
+          "service_worker": "background.js"
        },
        "content_scripts": [ {
           "js": [ "script.js" ],
           "matches": [ "http://*/*", "https://*/*" ]
        } ],
-       "icons": {
-          "128": "icon128.png",
-          "16": "icon16.png",
-          "48": "icon48.png"
-       },
-       "browser_action": {
-          "default_icon": "icon16.png"
+       "action": {
+         "default_title": "Day Counter",
+         "default_popup": "popup.html",
+         "default_icon": {
+            "128": "icon.png",
+            "16": "icon.png",
+            "48": "icon.png"
+         }
        }
     }
     
