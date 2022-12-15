@@ -15,8 +15,7 @@ const save_options = () => {
     }, 750);
     
     //refresh icon
-    // chrome.tab.sendMessage({event: "refresh"});
-
+    chrome.runtime.sendMessage({event: "refresh"})
 }
 
 // Restores select box state to saved value from storageArea.get.
