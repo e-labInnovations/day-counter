@@ -1,4 +1,3 @@
-
 (() => {
     //wait for receiving event from script.js
     chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
