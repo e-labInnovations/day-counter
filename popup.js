@@ -28,6 +28,6 @@ document.querySelector('#go-to-options').addEventListener('click', function() {
 });
 
 const getAddictionImg = (days) => {
-  let level = days>=365?8:days>=120?7:days>=60?6:days>=30?5:days>=15?4:days>=7?3:days>=3?2:1
+  let level = days>=365?8:days>=120?7:days>=60?6:days>=30?5:days>=15?4:days>=7?3:days>=3?2:days>=1?1:0
   return './assets/img/Level' + level + '.png'
 }
