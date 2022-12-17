@@ -34,7 +34,7 @@ const restore_options = () => {
       startDateInput.valueAsDate = new Date();
     }
 
-    textColorInput.value = textColor?textColor:"#ffffff"
+    textColorInput.value = textColor?textColor:"#8ab4f8"
   });
 }
 

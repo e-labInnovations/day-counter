@@ -10,7 +10,7 @@ chrome.storage.sync.get(['text-color', 'start-date'], result => {
     }
     
     if (!result['text-color']) {
-        chrome.storage.sync.set({'text-color' : '#ffffff'});
+        chrome.storage.sync.set({'text-color' : '#8ab4f8'});
         refresh()
     }
 });
@@ -49,22 +49,23 @@ const refresh = () => {
         var secondDate = new Date();
         var diffDays = Math.floor((secondDate.getTime() - firstDate.getTime())/(oneDay));
         var daySize = (Math.abs(diffDays) < 10) ? 14 : (Math.abs(diffDays) < 100) ? 12 : (Math.abs(diffDays) < 1000) ? 10 : (Math.abs(diffDays) < 10000) ? 8 : 7;
-        updateIcon(diffDays, daySize, "days", 8, result['text-color']);
+        updateIcon(diffDays, daySize, "Days", 8, result['text-color']);
     });
 }
 
 //Update Icon Function
 const updateIcon = (topline, tSize, bottomline, bSize, textColor) => {
-    textColor = textColor?textColor:"#ffffff"
+    textColor = textColor?textColor:"#8ab4f8"
     const canvas = new OffscreenCanvas(150, 150);
     var context = canvas.getContext('2d');
     context.fillStyle = textColor
-    context.font= tSize + "px Arial";
+    context.font= 'bold ' + tSize + "px Arial";
     context.fillText(topline,0,10);
     context.font= bSize + "px Arial";
     context.fillText(bottomline,0,19);
     var imageData = context.getImageData(0, 0, 19, 19);
     chrome.action.setIcon({ imageData: imageData });
+    chrome.action.setBadgeText({ text: bottomline });
 }
 
 // var diffDays = 12
