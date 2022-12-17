@@ -15,6 +15,9 @@
           <div class="column col-3"></div>
           <div class="column col-6">
             <div class="card">
+              <div class="card-image p-centered" id="addictionImg">
+                <!-- <img src="./assets/img/Level0.png" class="img-responsive"> -->
+              </div>
                 <div class="card-header p-centered">
                   <div class="card-title h2" id="days">0</div>
                   <div class="card-subtitle text-gray">Days</div>
@@ -27,6 +30,13 @@
             <div class="form-group">
                 <label class="form-label" for="textColor">Text Color</label>
                 <input class="form-input" type="color" id="textColor" placeholder="Start Date">
+            </div>
+
+            <div class="form-group">
+              <label class="form-switch">
+                <input type="checkbox" id="addiction">
+                <i class="form-icon"></i> Quit Addiction
+              </label>
             </div>
 
             <div class="toast toast-success" style="display: none;" id="status"></div>

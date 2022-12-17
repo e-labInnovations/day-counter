@@ -1,4 +1,4 @@
-chrome.storage.sync.get(['text-color', 'start-date'], result => {
+chrome.storage.sync.get(['text-color', 'start-date', 'addiction'], result => {
     if (!result['start-date']) {
         var d = new Date();
         var year = d.getFullYear();
@@ -11,6 +11,11 @@ chrome.storage.sync.get(['text-color', 'start-date'], result => {
     
     if (!result['text-color']) {
         chrome.storage.sync.set({'text-color' : '#8ab4f8'});
+        refresh()
+    }
+    
+    if (!result['addiction']) {
+        chrome.storage.sync.set({'addiction' : false});
         refresh()
     }
 });
